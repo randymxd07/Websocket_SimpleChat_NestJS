@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { ChatModule } from './chat/chat.module';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
 
@@ -15,6 +16,8 @@ import { join } from 'path';
     ServeStaticModule.forRoot({
       rootPath: join(__dirname,'..','public'),
     }),
+
+    ConfigModule.forRoot()
     
   ],
 
